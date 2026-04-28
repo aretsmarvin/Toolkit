@@ -14,7 +14,9 @@
       "description": "Open source digital forensics platform.",
       "category": "Workstations",
       "command": [
-        "/Applications/Autopsy.app/Contents/MacOS/Autopsy"
+        "open",
+        "-a",
+        "Autopsy"
       ],
       "update": {
         "type": "url",

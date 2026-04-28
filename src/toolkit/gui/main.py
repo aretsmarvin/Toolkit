@@ -228,11 +228,11 @@ class MainWindow(QtWidgets.QMainWindow):
     QtWidgets.QApplication.processEvents()
 
     container = QtWidgets.QWidget()
-    layout = QtWidgets.QVBoxLayout(container)
     try:
       plugin.create_ui(container)
     except Exception:  # pragma: no cover - defensive
       LOGGER.exception("Failed to initialize plugin %s", plugin.meta.name)
+      layout = QtWidgets.QVBoxLayout(container)
       error_label = QtWidgets.QLabel("Failed to load plugin. See log for details.")
       layout.addWidget(error_label)
 
@@ -260,7 +260,6 @@ class MainWindow(QtWidgets.QMainWindow):
       return
 
     try:
-      # Use Popen without waiting so the GUI stays responsive.
       subprocess.Popen(tool.command)
       self.status_bar.showMessage(f"Launched {tool.name}")
     except FileNotFoundError:

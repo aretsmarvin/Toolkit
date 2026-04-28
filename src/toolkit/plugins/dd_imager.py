@@ -34,7 +34,7 @@ class DDWorker(QtCore.QObject):
   @QtCore.Slot()
   def run(self) -> None:
     self.started.emit()
-    cmd = ["dd", f"if={self._source}", f"of={self._destination}", "bs=1m"]
+    cmd = ["dd", f"if={self._source}", f"of={self._destination}", "bs=1m", "status=progress"]
     LOGGER.info("Executing: %s", " ".join(shlex.quote(c) for c in cmd))
     try:
       process = subprocess.Popen(
