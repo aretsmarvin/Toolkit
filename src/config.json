@@ -1,0 +1,25 @@
+{
+  "branding": {
+    "app_name": "Toolkit",
+    "window_title": "Toolkit - Digital Forensics Toolkit",
+    "logo_path": null,
+    "icon_path": null
+  },
+  "logging": {
+    "log_dir": "~/.toolkit/logs"
+  },
+  "external_tools": [
+    {
+      "name": "Autopsy",
+      "description": "Open source digital forensics platform.",
+      "category": "Workstations",
+      "command": [
+        "/Applications/Autopsy.app/Contents/MacOS/Autopsy"
+      ],
+      "update": {
+        "type": "url",
+        "url": "https://www.autopsy.com/download/"
+      }
+    }
+  ]
+}
