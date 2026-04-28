@@ -11,16 +11,16 @@
   "external_tools": [
     {
       "name": "Autopsy",
-      "description": "Open source digital forensics platform for analysing disk images, file systems and more.",
+      "description": "Open source digital forensics platform for analysing disk images, file systems and more. Requires Java 8, The Sleuth Kit and PhotoRec (all installed automatically).",
       "category": "Workstations",
       "command": ["open", "-a", "Autopsy"],
       "install": {
-        "strategy": "homebrew_cask",
-        "cask": "autopsy"
+        "strategy": "autopsy_macos",
+        "zip_url": "https://github.com/sleuthkit/autopsy/releases/download/autopsy-4.22.1/autopsy-4.22.1_v2.zip"
       },
       "update": {
-        "type": "command",
-        "command": ["brew", "upgrade", "--cask", "autopsy"]
+        "type": "url",
+        "url": "https://github.com/sleuthkit/autopsy/releases/latest"
       }
     }
   ]
