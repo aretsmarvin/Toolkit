@@ -72,9 +72,7 @@ class Plugin(BasePlugin):
     super().__init__(
       PluginMeta(
         name="Disk imaging (dd demo)",
-        description=(
-          "Create a bit-for-bit copy of a source device to a destination file or device using dd.",
-        ),
+        description="Create a bit-for-bit copy of a source device to a destination file or device using dd.",
         category="Acquisition",
       ),
     )
